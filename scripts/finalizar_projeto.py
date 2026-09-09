@@ -183,7 +183,7 @@ No caso-base fictício:
 Os dados são fictícios e as premissas de tarifa, reajuste e emissões são editáveis.
 """,
         "04_COMO_ADICIONAR.txt": "LinkedIn > Perfil > Adicionar seção do perfil > Recomendado > Adicionar projeto. Use o texto de 01_PROJETO_LINKEDIN.txt, anexe as imagens de assets/linkedin/ e preencha as URLs do arquivo 05_URLS.txt quando houver publicação.",
-        "05_URLS.txt": "GitHub: não publicado ainda\nDemonstração Streamlit: executar localmente com INICIAR_SIMULADOR.bat\nZIP final: outputs/solar-energy-feasibility-simulator-FINAL-PTBR.zip\n",
+        "05_URLS.txt": "GitHub: https://github.com/luscaarmstrong1/solar-energy-feasibility-simulator\nDemonstração: https://luscaarmstrong1.github.io/solar-energy-feasibility-simulator/\nStreamlit local: executar com INICIAR_SIMULADOR.bat\nZIP final: outputs/solar-energy-feasibility-simulator-FINAL-PTBR.zip\n",
         "06_RESUMO_30_SEGUNDOS.txt": "Simulador em Python, Excel e Streamlit para avaliar viabilidade técnica e econômica de energia solar. Calcula dimensionamento, geração, fluxo de caixa, VPL, TIR, Payback, ROI acumulado, LCOE, cenários e sensibilidade.",
         "07_RESUMO_1_MINUTO.txt": "Desenvolvi um simulador de viabilidade solar para conectar engenharia elétrica e decisão financeira. A ferramenta estima potência instalada, geração mensal, economia, fluxo de caixa em 25 anos e indicadores como VPL, TIR, Payback, ROI acumulado e LCOE. Também inclui Excel auditável, app Streamlit em português, relatórios, gráficos, cenários e sensibilidade CAPEX x tarifa.",
         "08_RESULTADOS_DO_PROJETO.txt": f"Potência instalada: {metrics['installed_kwp']:.1f} kWp\nMódulos: {metrics['modules']}\nGeração anual: {metrics['annual_generation_kwh']:,.0f} kWh\nCAPEX: {fmt_brl(float(metrics['capex_total_brl']))}\nVPL: {fmt_brl(float(metrics['npv_brl']))}\nTIR: {fmt_pct(float(metrics['irr'])) if metrics['irr'] is not None else 'n.a.'}\nROI acumulado: {fmt_pct(float(metrics['roi_accumulated']))}\nLCOE: R$ {float(metrics['lcoe_brl_kwh']):.3f}/kWh\n",
@@ -193,6 +193,10 @@ Os dados são fictícios e as premissas de tarifa, reajuste e emissões são edi
 
 
 def update_site(metrics: dict[str, float | int | str | None]) -> None:
+    docs_assets = ROOT / "docs" / "assets" / "screenshots"
+    docs_assets.mkdir(parents=True, exist_ok=True)
+    for name in ["01_visao_geral.png", "07_sensibilidade.png"]:
+        shutil.copy2(ROOT / "assets" / "screenshots" / name, docs_assets / name)
     html = f"""<!doctype html>
 <html lang="pt-BR">
 <head>
@@ -221,9 +225,9 @@ def update_site(metrics: dict[str, float | int | str | None]) -> None:
       <div class="card"><strong>Payback simples</strong><br>{metrics['payback_simple_years']:.1f} anos</div>
     </section>
     <h2>Painel</h2>
-    <img src="../assets/screenshots/01_visao_geral.png" alt="Visão geral do simulador">
+    <img src="assets/screenshots/01_visao_geral.png" alt="Visão geral do simulador">
     <h2>Sensibilidade</h2>
-    <img src="../assets/screenshots/07_sensibilidade.png" alt="Sensibilidade CAPEX x tarifa">
+    <img src="assets/screenshots/07_sensibilidade.png" alt="Sensibilidade CAPEX x tarifa">
     <p>Dados fictícios para demonstração. Tarifa, reajuste e fator de emissões são premissas editáveis.</p>
   </main>
 </body>

@@ -32,6 +32,8 @@ assets/screenshots/08_premissas.png
 config/default_scenario.yaml
 data/sample_consumption.csv
 data/sample_irradiation.csv
+docs/assets/screenshots/01_visao_geral.png
+docs/assets/screenshots/07_sensibilidade.png
 docs/assumptions.md
 docs/executive_summary.md
 docs/financial_metrics.md

@@ -1,3 +1,4 @@
-GitHub: não publicado ainda
-Demonstração Streamlit: executar localmente com INICIAR_SIMULADOR.bat
+GitHub: https://github.com/luscaarmstrong1/solar-energy-feasibility-simulator
+Demonstração: https://luscaarmstrong1.github.io/solar-energy-feasibility-simulator/
+Streamlit local: executar com INICIAR_SIMULADOR.bat
 ZIP final: outputs/solar-energy-feasibility-simulator-FINAL-PTBR.zip
