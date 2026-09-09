@@ -1,0 +1,18 @@
+profile: "Comercial fictício"
+state: "SP"
+city: "Campinas"
+monthly_consumption_kwh: 4500
+hsp_monthly: [4.8, 5.0, 5.1, 5.0, 4.6, 4.3, 4.5, 4.9, 5.0, 5.2, 5.1, 4.9]
+module_power_wp: 600
+module_area_m2: 2.6
+performance_ratio: 0.80
+inverter_kw: 45
+degradation_rate: 0.006
+system_life_years: 25
+tariff_compensable_brl_kwh: 0.95
+capex_per_kwp_brl: 4200
+opex_pct_capex: 0.012
+tariff_escalation: 0.04
+discount_rate: 0.10
+co2_factor_kg_per_kwh: 0.0385
+data_note: "Dados fictícios para demonstração. Tarifa, CAPEX, HSP e fator de emissão são premissas ilustrativas configuráveis."

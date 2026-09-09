@@ -1,0 +1,12 @@
+Python
+Streamlit
+Excel
+Modelagem financeira
+Energia solar fotovoltaica
+Engenharia elétrica
+Análise de sensibilidade
+VPL
+TIR
+Payback
+LCOE
+Documentação técnica

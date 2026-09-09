@@ -1,0 +1,1 @@
+Simulador em Python, Excel e Streamlit para avaliar viabilidade técnica e econômica de energia solar. Calcula dimensionamento, geração, fluxo de caixa, VPL, TIR, Payback, ROI acumulado, LCOE, cenários e sensibilidade.

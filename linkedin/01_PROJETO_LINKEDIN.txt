@@ -1,0 +1,11 @@
+Título do projeto:
+Simulador de Viabilidade Técnica e Econômica de Energia Solar
+
+Descrição:
+Projeto de portfólio que integra engenharia elétrica, geração fotovoltaica, modelagem financeira, Excel e Streamlit. O simulador estima potência instalada, geração anual, fluxo de caixa, VPL, TIR, Payback, ROI acumulado em 25 anos e LCOE para um caso comercial fictício.
+
+Resultado do caso-base:
+Potência instalada: 38.4 kWp
+Geração anual: 54,286 kWh
+VPL: R$ 426.941
+Payback simples: 3.1 anos

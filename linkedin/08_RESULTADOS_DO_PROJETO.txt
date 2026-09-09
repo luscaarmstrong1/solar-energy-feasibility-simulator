@@ -1,0 +1,8 @@
+Potência instalada: 38.4 kWp
+Módulos: 64
+Geração anual: 54,286 kWh
+CAPEX: R$ 161.280
+VPL: R$ 426.941
+TIR: 34,1%
+ROI acumulado: 1179,6%
+LCOE: R$ 0.396/kWh

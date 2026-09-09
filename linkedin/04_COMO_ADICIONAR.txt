@@ -1,0 +1,1 @@
+LinkedIn > Perfil > Adicionar seção do perfil > Recomendado > Adicionar projeto. Use o texto de 01_PROJETO_LINKEDIN.txt, anexe as imagens de assets/linkedin/ e preencha as URLs do arquivo 05_URLS.txt quando houver publicação.

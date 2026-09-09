@@ -1,0 +1,1 @@
+Desenvolvi um simulador de viabilidade solar para conectar engenharia elétrica e decisão financeira. A ferramenta estima potência instalada, geração mensal, economia, fluxo de caixa em 25 anos e indicadores como VPL, TIR, Payback, ROI acumulado e LCOE. Também inclui Excel auditável, app Streamlit em português, relatórios, gráficos, cenários e sensibilidade CAPEX x tarifa.

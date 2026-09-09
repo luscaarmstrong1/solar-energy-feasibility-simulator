@@ -1,0 +1,55 @@
+{
+  "nome_projeto": "Simulador de Viabilidade Técnica e Econômica de Energia Solar",
+  "tipo": "Projeto de portfólio técnico",
+  "idioma": "pt-BR",
+  "caso": "Cliente comercial fictício",
+  "horizonte_anos": 25,
+  "premissas": {
+    "tarifa_compensavel_brl_kwh": 0.95,
+    "tarifa_observacao": "Premissa sintética editável, não tarifa oficial.",
+    "reajuste_tarifario": 0.04,
+    "reajuste_observacao": "Premissa de cenário, não previsão oficial.",
+    "fator_emissoes_kgco2_kwh": 0.0385,
+    "fator_emissoes_observacao": "Premissa ilustrativa editável, não fonte oficial."
+  },
+  "resultados": {
+    "recommended_kwp": 38.00675675675675,
+    "modules": 64,
+    "installed_kwp": 38.4,
+    "area_m2": 166.4,
+    "dc_ac_ratio": 0.8533333333333333,
+    "performance_ratio": 0.8,
+    "total_losses_pct": 0.14157894896245016,
+    "annual_generation_kwh": 54285.9264,
+    "year_1_savings_brl": 49636.270079999995,
+    "capex_total_brl": 161280.0,
+    "payback_simple_years": 3.12880677717547,
+    "payback_discounted_years": 3.8976150371603366,
+    "npv_brl": 426940.58106714435,
+    "irr": 0.34083091836048474,
+    "roi": 11.796350527572535,
+    "roi_accumulated": 11.796350527572535,
+    "lcoe_brl_kwh": 0.3962386987291974,
+    "total_net_savings_brl": 1902515.4130868984,
+    "co2_avoided_tonnes_lifetime": 48.65567247698549,
+    "co2_avoided_tonnes_year_1": 2.0900081664,
+    "feasibility": "Atrativo"
+  },
+  "arquivos_principais": [
+    "app.py",
+    "Solar_Feasibility_Simulator.xlsx",
+    "outputs/results.json",
+    "outputs/cashflow.csv",
+    "outputs/resumo_portfolio.json"
+  ],
+  "competencias": [
+    "Engenharia elétrica",
+    "Energia solar fotovoltaica",
+    "Modelagem financeira",
+    "Python",
+    "Streamlit",
+    "Excel",
+    "Análise de sensibilidade",
+    "Documentação técnica"
+  ]
+}
