@@ -1,89 +1,106 @@
-# Simulador de Viabilidade Técnica e Econômica de Energia Solar
+# Simulador de Viabilidade Técnico-Econômica Solar FV
+### *Solar Energy Techno-Economic Feasibility Simulator*
 
-Projeto de portfólio que integra engenharia elétrica, geração fotovoltaica, modelagem financeira, Excel, Streamlit e documentação técnica em português.
+[![Simulador Online](https://img.shields.io/badge/Simulador_Interativo-GitHub_Pages-D3A15C?style=for-the-badge&logo=github)](https://luscaarmstrong1.github.io/solar-energy-feasibility-simulator/)
+[![Portfólio Lucas Santos](https://img.shields.io/badge/Portf%C3%B3lio-Lucas_Santos-071827?style=for-the-badge&logo=vercel)](https://lucas-santos-portfolio-zeta.vercel.app/)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Lucas_Silva_Santos-102B42?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/lucasssantos1/)
+[![Python](https://img.shields.io/badge/Python-Engenharia_%26_Dados-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://github.com/luscaarmstrong1/solar-energy-feasibility-simulator)
 
-## Visão Geral
+> **Camada 04 • Ecossistema de Engenharia, Energia, Dados & Automação**
+> Dimensionamento energético por HSP e Performance Ratio, projeção de fluxo de caixa descontado em 25 anos, cálculo de VPL, TIR, Payback e LCOE.
 
-O simulador estima a potência fotovoltaica recomendada, a geração mensal/anual, o fluxo de caixa em 25 anos e indicadores de decisão para um cliente comercial fictício. Os dados são sintéticos e servem para demonstração profissional. Tarifa, reajuste tarifário, CAPEX, OPEX e fator de emissões são premissas editáveis.
+---
 
-![Visão geral](assets/screenshots/01_visao_geral.png)
+## Acesse o Simulador Interativo e Demonstração Online
 
-## Principais Resultados do Caso-Base
+- **Simulador Paramétrico Web (GitHub Pages):** [https://luscaarmstrong1.github.io/solar-energy-feasibility-simulator/](https://luscaarmstrong1.github.io/solar-energy-feasibility-simulator/)
+- **Vitrine no Portfólio Principal:** [https://lucas-santos-portfolio-zeta.vercel.app/#arquitetura](https://lucas-santos-portfolio-zeta.vercel.app/#arquitetura)
 
-| Indicador | Resultado |
-| --- | ---: |
-| Potência instalada | 38.4 kWp |
-| Módulos | 64 |
-| Geração anual estimada | 54,286 kWh |
-| CAPEX | R$ 161.280 |
-| Economia líquida no Ano 1 | R$ 49.636 |
-| Payback simples | 3.1 anos |
-| Payback descontado | 3.9 anos |
-| VPL | R$ 426.941 |
-| TIR | 34,1% |
-| ROI acumulado em 25 anos | 1179,6% |
-| LCOE | R$ 0.396/kWh |
+---
 
-## Como Executar
+## Visão Geral e Problema de Engenharia
 
-```bash
-python -m pip install -r requirements.txt
-python scripts/finalizar_projeto.py
-python -m streamlit run app.py
+Simulador técnico-econômico de usinas e sistemas fotovoltaicos em horizonte de 25 anos: dimensionamento por HSP/PR, degradação anual, fluxo de caixa descontado, VPL, TIR, payback e LCOE em Python, Streamlit e Excel.
+
+### Indicadores-Chave do Projeto (Caso-Base)
+
+| Indicador Técnico | Resultado / Escopo | Detalhamento de Engenharia |
+| :--- | :--- | :--- |
+| **Potência Caso-Base** | `38,4 kWp` | 64 módulos de 600 Wp |
+| **Geração Anual** | `54.286 kWh` | Degradação linear 0,5%/ano |
+| **VPL (25 Anos)** | `R$ 426.941` | TIR de 34,1% a.a. |
+| **Payback & LCOE** | `3,1 anos` | LCOE de R$ 0,396/kWh |
+
+---
+
+## Arquitetura do Sistema e Fluxo de Modelagem
+
+1. **Etapa 01:** Entrada de Premissas Técnicas e Tarifárias (Consumo mensal, HSP local, PR, tarifa e inflação energética)
+2. **Etapa 02:** Motor de Engenharia Fotovoltaica (Cálculo de potência kWp, número de módulos, inversor e geração com degradação)
+3. **Etapa 03:** Modelagem Econômico-Financeira de 25 Anos (CAPEX, OPEX, fluxo de caixa livre e descontado, VPL, TIR e LCOE)
+4. **Etapa 04:** Análise de Sensibilidade Bivariada (Matriz CAPEX × Tarifa e cenários Conservador, Base e Otimista)
+
+---
+
+## Fundamentação Física, Matemática e Regulatória
+
+### 1. Dimensionamento da Potência de Pico (kWp)
+```text
+P_FV = Consumo_Diário(kWh) / (HSP_média · PR)
 ```
 
-No Windows, use `ATUALIZAR_TUDO.bat` para regenerar os artefatos e `INICIAR_SIMULADOR.bat` para abrir o Streamlit.
+### 2. Valor Presente Líquido em 25 Anos (VPL)
+```text
+VPL = -CAPEX_0 + Σ_{t=1..25} [Fluxo_Caixa_Líquido(t) / (1 + TMA)^t]
+```
 
-## Streamlit
+### 3. Custo Nivelado de Energia (LCOE)
+```text
+LCOE = [CAPEX_0 + Σ (OPEX_t / (1+r)^t)] / [Σ (E_gerada,t · (1-d)^(t-1) / (1+r)^t)]
+```
 
-O app possui oito abas:
+---
 
-1. Visão Geral
-2. Dimensionamento
-3. Energia e Geração
-4. Análise Financeira
-5. Fluxo de Caixa
-6. Cenários
-7. Sensibilidade
-8. Premissas e Metodologia
+## Painéis Analíticos e Evidências Visuais
 
-![Sensibilidade](assets/screenshots/07_sensibilidade.png)
+### Painel Executivo de Viabilidade Técnica e Econômica
+![Painel Executivo de Viabilidade Técnica e Econômica](assets/screenshots/01_visao_geral.png)
 
-## Excel
+### Dimensionamento Físico do Sistema Fotovoltaico
+![Dimensionamento Físico do Sistema Fotovoltaico](assets/screenshots/02_dimensionamento.png)
 
-O arquivo `Solar_Feasibility_Simulator.xlsx` contém entradas editáveis, geração mensal, custos, fluxo de caixa, cenários, sensibilidade, mapa CAPEX x tarifa, premissas e documentação. As células de entrada ficam destacadas em amarelo.
+### Balanço Mensal de Geração e Degradação em 25 Anos
+![Balanço Mensal de Geração e Degradação em 25 Anos](assets/screenshots/03_energia_geracao.png)
 
-![Fluxo de caixa](assets/screenshots/05_fluxo_caixa.png)
+### Indicadores Financeiros: VPL, TIR, ROI e LCOE
+![Indicadores Financeiros: VPL, TIR, ROI e LCOE](assets/screenshots/04_analise_financeira.png)
 
-## Metodologia
+---
 
-O dimensionamento usa consumo diário médio dividido por HSP e Performance Ratio. A geração mensal considera potência instalada, HSP, dias do mês, Performance Ratio e disponibilidade. A geração anual é degradada ao longo da vida útil.
+## Como Executar Localmente
 
-O fluxo financeiro inclui CAPEX inicial, economia bruta, OPEX anual, custos extraordinários opcionais, fluxo líquido, fluxo descontado, VPL, TIR, payback simples, payback descontado, ROI acumulado e LCOE.
+```bash
+# 1. Clone o repositório
+git clone https://github.com/luscaarmstrong1/solar-energy-feasibility-simulator.git
+cd solar-energy-feasibility-simulator
 
-## Definições
+# 2. Instale as dependências e execute a suíte analítica
+pip install -r requirements.txt
+python scripts/finalizar_projeto.py
+pytest
+streamlit run app.py
+```
 
-ROI acumulado em 25 anos = economia líquida acumulada no horizonte / CAPEX inicial.
+> **Nota Técnica:** Este projeto utiliza modelagem determinística auditável e séries sintéticas estruturadas para demonstração de arquitetura de engenharia elétrica, ciência de dados e tomada de decisão técnico-econômica. Não substitui projeto executivo, parecer de acesso da concessionária ou emissão de ART específica de campo.
 
-LCOE = valor presente de CAPEX, OPEX e custos extraordinários / energia degradada descontada.
+---
 
-## Premissas e Limitações
+## Autor e Responsável Técnico
 
-Tarifa e reajuste tarifário são premissas sintéticas de cenário, não valores oficiais e não previsões. O fator de emissões é uma premissa ilustrativa editável, não fonte oficial. Para uso técnico real, substitua essas entradas por dados regulatórios, comerciais e ambientais com data de referência.
+**Lucas Silva Santos**
+*Engenheiro Eletricista & Gerente de Projetos*
+Energia • Dados • Inteligência Artificial • Automação • São João da Boa Vista, SP • Itajubá, MG
 
-## Estrutura
-
-- `app.py`: app Streamlit em português.
-- `src/`: modelos técnico, financeiro, cenários e sensibilidade.
-- `scripts/`: execução, validação, Excel, assets e finalização.
-- `outputs/`: CSV, JSON e resumo único de portfólio.
-- `assets/`: gráficos, screenshots, arquitetura e imagens LinkedIn.
-- `linkedin/`: textos prontos para cadastro e divulgação.
-- `docs/`: documentação complementar.
-
-## Validação
-
-..................                                                       [100%]
-18 passed in 0.22s
-
-Model validation passed.
+- **Portfólio:** [https://lucas-santos-portfolio-zeta.vercel.app/](https://lucas-santos-portfolio-zeta.vercel.app/)
+- **LinkedIn:** [linkedin.com/in/lucasssantos1](https://www.linkedin.com/in/lucasssantos1/)
+- **GitHub:** [@luscaarmstrong1](https://github.com/luscaarmstrong1)
